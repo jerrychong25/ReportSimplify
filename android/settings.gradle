@@ -1,0 +1,3 @@
+rootProject.name = 'ReportSimplify'
+
+include ':app'
