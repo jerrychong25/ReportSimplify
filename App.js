@@ -1,68 +1,10 @@
 /**
- * Sample React Native App
+ * Sample React Native App With Firebase Authentication
  * https://github.com/facebook/react-native
  *
  * @format
  * @flow
  */
-
-//*****Simple Sample 1*****
-// import React, {Component} from 'react';
-// import {Platform, StyleSheet, Text, View} from 'react-native';
-// import {RkButton, RkTheme} from 'react-native-ui-kitten';
-
-// let accent = '#000000';
-
-// RkTheme.setType('RkButton', 'accent', {
-//   container: {
-//     backgroundColor: accent
-//   },
-//   content: {
-//     color: 'white'
-//   }
-// });
-
-// const instructions = Platform.select({
-//   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-//   android:
-//     'Double tap R on your keyboard to reload,\n' +
-//     'Shake or press menu button for dev menu',
-// });
-
-// type Props = {};
-// export default class App extends Component<Props> {
-//   render() {
-//     return (
-//       // <View style={styles.container}>
-//       //   <Text style={styles.welcome}>Welcome to React Native!</Text>
-//       //   <Text style={styles.instructions}>To get started, edit App.js</Text>
-//       //   <Text style={styles.instructions}>{instructions}</Text>
-//       // </View>
-//       <View>
-//         <RkButton rkType='accent'>Click me!</RkButton>
-//       </View>
-//     );
-//   }
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#F5FCFF',
-//   },
-//   welcome: {
-//     fontSize: 20,
-//     textAlign: 'center',
-//     margin: 10,
-//   },
-//   instructions: {
-//     textAlign: 'center',
-//     color: '#333333',
-//     marginBottom: 5,
-//   },
-// });
 
 //*****Firebase Authentication Simple Sample*****
 // import firebase from 'react-native-firebase';
@@ -77,7 +19,9 @@
 
 //*****React Native Firebase Authentication Phone Authentication Sample*****
 import React, { Component } from 'react';
-import { View, Button, Text, TextInput, Image } from 'react-native';
+// import { View, Button, Text, TextInput, Image } from 'react-native';
+import { View, TextInput, Image } from 'react-native';
+import { Container, Header, Content, Button, Text, Form, Item, Input, Label } from 'native-base';
 import firebase from 'react-native-firebase';
 
 const successImageUri = 'https://cdn.pixabay.com/photo/2015/06/09/16/12/icon-803718_1280.png';
@@ -145,17 +89,52 @@ export default class PhoneAuthTest extends Component {
    const { phoneNumber } = this.state;
 
     return (
-      <View style={{ padding: 25 }}>
-        <Text>Enter phone number:</Text>
-        <TextInput
-          autoFocus
-          style={{ height: 40, marginTop: 15, marginBottom: 15 }}
-          onChangeText={value => this.setState({ phoneNumber: value })}
-          placeholder={'Phone number ... '}
-          value={phoneNumber}
-        />
-        <Button title="Sign In" color="green" onPress={this.signIn} />
-      </View>
+      // <View style={{ padding: 25 }}>
+      //   <Text>Enter phone number:</Text>
+      //   <TextInput
+      //     autoFocus
+      //     style={{ height: 40, marginTop: 15, marginBottom: 15 }}
+      //     onChangeText={value => this.setState({ phoneNumber: value })}
+      //     placeholder={'Phone number ... '}
+      //     value={phoneNumber}
+      //   />
+      //   <Button 
+      //     title="Sign In" 
+      //     color="green"
+      //     onPress={this.signIn} 
+      //   />
+      // </View> 
+      <Container style={{flex: 1, justifyContent: "center"}}>
+          <Content>
+            <Form>
+              <Label
+                style={{ height: 40, marginLeft: 15, marginRight: 15, marginTop: 15, marginBottom: 5 }}
+                >
+                Phone Number
+              </Label>
+              <Item rounded
+                style={{ height: 50, width: 330, marginLeft: 15, marginRight: 15, marginBottom: 10 }}
+                >
+                <Input autoFocus
+                  style={{  marginLeft: 15, marginRight: 15 }}
+                  onChangeText={value => this.setState({ phoneNumber: value })}
+                  value={phoneNumber}
+                />
+              </Item>
+            </Form>
+            <Button rounded medium full
+             style={{ margin:15, backgroundColor: '#66BB6A', marginBottom: 5  }}
+             onPress={this.signIn} 
+              >
+              <Text>Sign In</Text>
+            </Button>
+            <Button rounded medium full
+             style={{ margin:15, backgroundColor: '#66BB6A' }}
+              >
+              <Text>Forgot Password</Text>
+            </Button>
+        </Content>
+      </Container>
     );
   }
 
