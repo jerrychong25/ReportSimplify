@@ -104,16 +104,37 @@ export default class PhoneAuthTest extends Component {
       //     onPress={this.signIn} 
       //   />
       // </View> 
-      <Container style={{flex: 1, justifyContent: "center"}}>
-          <Content>
+      <Container>
+          <Content contentContainerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Form>
+              <Image 
+                source={require('./img/home_icon.png')} 
+                style={{ 
+                  height: 200, width: 200, 
+                  alignSelf: 'center',
+                  // marginLeft: 15, marginRight: 15, marginTop: 15, marginBottom: 5 
+                }}
+                />
+              <Label
+                style={{ 
+                  height: 40, 
+                  fontSize: 25,
+                  fontWeight: 'bold',
+                  alignSelf: 'center',
+                  marginTop: 10, marginBottom: 5 }}
+                >
+                Report Simplify
+              </Label>
               <Label
                 style={{ height: 40, marginLeft: 15, marginRight: 15, marginTop: 15, marginBottom: 5 }}
                 >
                 Phone Number
               </Label>
               <Item rounded
-                style={{ height: 50, width: 330, marginLeft: 15, marginRight: 15, marginBottom: 10 }}
+                style={{ 
+                  height: 50, width: 330, 
+                  alignSelf: 'center',
+                  marginBottom: 10 }}
                 >
                 <Input autoFocus
                   style={{  marginLeft: 15, marginRight: 15 }}
