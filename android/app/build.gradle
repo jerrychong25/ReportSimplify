@@ -140,6 +140,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-firebase')
     // This should be here already
     implementation project(':react-native-firebase')
 

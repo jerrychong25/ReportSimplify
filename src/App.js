@@ -8,9 +8,10 @@
 //*****React Native Firebase Authentication Email Authentication Sample*****
 import React, { Component } from 'react';
 import firebase from 'react-native-firebase';
+import Navigation from "./Navigation.js";
 
 // Import components to display on screen
-import Login from './Login'
+// import Login from './src/Login.js'
 
 export default class App extends React.Component {
 
@@ -49,8 +50,7 @@ export default class App extends React.Component {
 
     // Chech if user is logined
     if (!this.state.user) {
-      Login.renderIdle();
-      return;
+      return <Navigation />;      // Login
     }
   }
 

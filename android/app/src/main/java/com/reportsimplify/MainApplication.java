@@ -3,6 +3,7 @@ package com.reportsimplify;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import io.invertase.firebase.RNFirebasePackage;
 
 // Firebase
 import io.invertase.firebase.RNFirebasePackage;
