@@ -10,14 +10,12 @@ import React, { Component } from 'react';
 import firebase from 'react-native-firebase';
 import Navigation from "./Navigation.js";
 
-// Import components to display on screen
-// import Login from './src/Login.js'
-
 export default class App extends React.Component {
 
   constructor() {
     super();
     // this.authSubscription = null;
+
     this.state = {
       loading: false,
     };
