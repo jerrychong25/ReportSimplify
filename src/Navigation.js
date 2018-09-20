@@ -7,9 +7,9 @@ import HomeScreen from "./HomeScreen.js";
 import MainScreenNavigator from "./ChatScreen.js";
 import ProfileScreen from "./ProfileScreen.js";
 import SideBar from "./SideBar.js";
-import LoginScreen from './src/Login.js';       // Added this line
+import LoginScreen from './Login.js';       // Added this line
 
-// From HomeScreen index.js
+// From HomeScreen index.js`
 const NavigationRouter = DrawerNavigator(
     {
       Home: { screen: HomeScreen },

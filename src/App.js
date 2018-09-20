@@ -25,12 +25,14 @@ export default class App extends React.Component {
    * Listen for any auth state changes and update component state
    */
   componentDidMount() {
-    this.authSubscription = firebase.auth().onAuthStateChanged((user) => {
-      this.setState({ 
-        loading: false,
-        user,
-      });
-    });
+    // this.authSubscription = firebase.auth().onAuthStateChanged((user) => {
+    //   this.setState({ 
+    //     loading: false,
+    //     user,
+    //   });
+    // });
+
+    // Need To Check On Above Codes!!!!!!!!!!!!!!!!!!!
   }
 
     /**
@@ -41,13 +43,16 @@ export default class App extends React.Component {
   }
 
   render() {
-    // Check if still loading
-    if (this.state.loading) {
-      return null;
-    }
+    
+    // // Check if still loading
+    // if (this.state.loading) {
+    //   console.debug("App.js - Loading");
+    //   return null;
+    // }
 
     // Chech if user is logined
     if (!this.state.user) {
+      console.debug("App.js - User Loggin In");
       return <Navigation />;      // Login
     }
   }

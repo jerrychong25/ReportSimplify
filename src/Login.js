@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import { View, TextInput, Image } from 'react-native';
 import { Container, Content, Button, Text, Form, Item, Input, Label } from 'native-base';
+import firebase from 'react-native-firebase';
 
 export default class Login extends React.Component {
 
+  constructor(props){
+    super(props);
+ 
+    this.state = {
+       email: null,
+       password: null,
+    }
+ }
     // constructor() {
     //   super();
     //   this.unsubscriber = null;
@@ -33,32 +42,31 @@ export default class Login extends React.Component {
     onLogin = () => {
         const { email, password } = this.state;
 
-        console.log("*****************Part 1**********************");
-        console.log("Email value: ");
-        console.log(this.state.Email);
-        console.log("Password value: ");
-        console.log(this.state.Password);
+        Email = email;
+        Password = password;
 
-        // email = this.state.Email;
-        // password = this.state.Password;
-
-        console.log("*****************Part 2**********************");
+        console.log("************Before Send Firebase Host*****************");
         console.log("email value: ");
-        console.log(email);
+        console.log(Email);
         console.log("password value: ");
-        console.log(password);
+        console.log(Password);
 
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        firebase.auth().signInWithEmailAndPassword(Email, Password)
+        // firebase.auth().signInAndRetrieveDataWithEmailAndPassword(Email, Password)
           .then((user) => {
             // If you need to do anything with the user, do it here
             // The user will be logged in automatically by the 
             // `onAuthStateChanged` listener we set up in App.js earlier
+
+            console.debug("Login.js - onLogin Success");
           })
           .catch((error) => {
             const { code, message } = error;
             // For details of error codes, see the docs
             // The message contains the default Firebase string
             // representation of the error
+
+            console.debug("Login.js - onLogin Error");
           });
       }
 
@@ -83,19 +91,19 @@ export default class Login extends React.Component {
           });
       }
 
-    renderIdle() {
+    render() {
     //   if (!this.state.user) {
     //     return <Login />;
     //   }
   
-    const { Email, Password } = this.state;
+    const { email, password } = this.state;
 
     return (
         <Container>
           <Content contentContainerStyle={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Form>
               <Image 
-                source={require('./img/home_icon.png')} 
+                source={require('../img/home_icon.png')} 
                 style={{ 
                   height: 200, width: 200, 
                   alignSelf: 'center',
@@ -124,8 +132,8 @@ export default class Login extends React.Component {
                 >
                 <Input autoFocus
                   style={{  marginLeft: 15, marginRight: 15 }}
-                  onChangeText={value => this.setState({ Email: value })}
-                  value={Email}
+                  onChangeText={value => this.setState({ email: value })}
+                  value={email}
                 />
               </Item>
               <Label
@@ -141,8 +149,8 @@ export default class Login extends React.Component {
                 >
                 <Input autoFocus
                   style={{  marginLeft: 15, marginRight: 15 }}
-                  onChangeText={value => this.setState({ Password: value })}
-                  value={Password}
+                  onChangeText={value => this.setState({ password: value })}
+                  value={password}
                 />
               </Item>
             </Form>
