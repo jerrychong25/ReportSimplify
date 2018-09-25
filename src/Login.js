@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, ToastAndroid } from 'react';
 import { View, TextInput, Image } from 'react-native';
 import { Container, Content, Button, Text, Form, Item, Input, Label } from 'native-base';
 import firebase from 'react-native-firebase';
+import ChatScreen from './ChatScreen';
 
 export default class Login extends React.Component {
 
@@ -59,6 +60,11 @@ export default class Login extends React.Component {
             // `onAuthStateChanged` listener we set up in App.js earlier
 
             console.debug("Login.js - onLogin Success");
+            ToastAndroid.show('Login.js - onLogin Success', ToastAndroid.SHORT);
+
+            this.props.navigation.navigate("ChatScreen");
+
+            // return <ChatScreen />;
           })
           .catch((error) => {
             const { code, message } = error;
@@ -67,6 +73,7 @@ export default class Login extends React.Component {
             // representation of the error
 
             console.debug("Login.js - onLogin Error");
+            ToastAndroid.show('Login.js - onLogin Error', ToastAndroid.SHORT);
           });
       }
 

@@ -12,8 +12,8 @@ import LoginScreen from './Login.js';       // Added this line
 // From HomeScreen index.js`
 const NavigationRouter = DrawerNavigator(
     {
-      Home: { screen: HomeScreen },
       Login: { screen: LoginScreen },           // Added this line
+      Home: { screen: HomeScreen },
       Chat: { screen: MainScreenNavigator },
       Profile: { screen: ProfileScreen }
     },
