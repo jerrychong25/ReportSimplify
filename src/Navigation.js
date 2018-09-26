@@ -13,9 +13,9 @@ import LoginScreen from './Login.js';       // Added this line
 const NavigationRouter = DrawerNavigator(
     {
       Login: { screen: LoginScreen },           // Added this line
-      Home: { screen: HomeScreen },
-      Chat: { screen: MainScreenNavigator },
-      Profile: { screen: ProfileScreen }
+      // Home: { screen: HomeScreen },
+      // Chat: { screen: MainScreenNavigator },
+      // Profile: { screen: ProfileScreen }
     },
     {
       contentComponent: props => <SideBar {...props} />
