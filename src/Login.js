@@ -122,12 +122,12 @@ export default class Login extends React.Component {
                   fontSize: 25,
                   fontWeight: 'bold',
                   alignSelf: 'center',
-                  marginTop: 10, marginBottom: 5 }}
+                  marginTop: 10, marginBottom: 1 }}
                 >
                 Report Simplify
               </Label>
               <Label
-                style={{ height: 40, marginLeft: 15, marginRight: 15, marginTop: 15, marginBottom: 5 }}
+                style={{ height: 40, marginLeft: 15, marginRight: 15, marginTop: 15, marginBottom: 1 }}
                 >
                 Email
               </Label>
@@ -144,7 +144,7 @@ export default class Login extends React.Component {
                 />
               </Item>
               <Label
-                style={{ height: 40, marginLeft: 15, marginRight: 15, marginTop: 15, marginBottom: 5 }}
+                style={{ height: 40, marginLeft: 15, marginRight: 15, marginTop: 15, marginBottom: 1 }}
                 >
                 Password
               </Label>
